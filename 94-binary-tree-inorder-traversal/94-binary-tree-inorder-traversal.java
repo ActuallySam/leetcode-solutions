@@ -15,6 +15,8 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
+        
+        // Iterative
         List<Integer> inorder = new ArrayList<Integer>();
         Stack<TreeNode> st = new Stack<TreeNode>();
         TreeNode node = root;
