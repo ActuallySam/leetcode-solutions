@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map.Entry;
-
 class Solution {
     public int[] singleNumber(int[] nums) {
         int n = nums.length;
@@ -18,7 +15,7 @@ class Solution {
         int i = 0;
         int[] arr = new int[2];
         
-        for (Entry<Integer, Integer> entry: map.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry: map.entrySet()) {
             if (entry.getValue() == 1) {
                 arr[i] = entry.getKey();
                 i++;
