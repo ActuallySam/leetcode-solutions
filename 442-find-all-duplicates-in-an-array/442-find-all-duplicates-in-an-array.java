@@ -1,8 +1,7 @@
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
         int n = nums.length;
-        Arrays.sort(nums);
-        
+             
         List<Integer> list = new ArrayList<Integer>();
         Set<Integer> set = new HashSet<Integer>();
         
