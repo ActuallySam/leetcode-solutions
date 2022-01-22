@@ -11,18 +11,36 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        if (head == null)
+        // HashSet Solution
+//         if (head == null)
+//             return false;
+        
+//         HashSet<ListNode> set = new HashSet<ListNode>();
+//         while (head != null) {
+//             if (!set.contains(head)) {
+//                 set.add(head);
+//                 head = head.next;
+//             }
+//             else 
+//                 return true;
+//         }
+//         return false;
+        
+        // Fast and Slow Pointers Method
+        ListNode slow = head;
+        ListNode fast = head;
+        
+        if (head == null) 
             return false;
         
-        HashSet<ListNode> set = new HashSet<ListNode>();
-        while (head != null) {
-            if (!set.contains(head)) {
-                set.add(head);
-                head = head.next;
-            }
-            else 
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            
+            if (fast == slow)
                 return true;
         }
+        
         return false;
     }
 }
