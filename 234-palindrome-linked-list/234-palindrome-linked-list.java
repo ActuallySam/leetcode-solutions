@@ -15,9 +15,11 @@ class Solution {
         
         List<Integer> list = new ArrayList<Integer>();
         
-        while (head != null) {
-            list.add(head.val);
-            head = head.next;
+        ListNode node = head;
+        
+        while (node != null) {
+            list.add(node.val);
+            node = node.next;
         }
         
         int n = list.size();
