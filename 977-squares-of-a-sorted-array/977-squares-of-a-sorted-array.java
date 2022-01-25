@@ -3,8 +3,7 @@ class Solution {
         int n = nums.length;
         
         for (int i=0; i<n; i++) {
-            int sq = (int)Math.pow(nums[i], 2);
-            nums[i] = sq;
+            nums[i] = nums[i] * nums[i];
         }
         
         Arrays.sort(nums);
