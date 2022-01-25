@@ -9,22 +9,32 @@
  * }
  */
 class Solution {
-    public ListNode removeElements(ListNode head, int val) {        
-        ListNode node = head;
+    public ListNode removeElements(ListNode head, int val) {
         
-        if (head == null)
-            return head;
+        // Recursive Solution
+        if(head == null) 
+            return null;
         
-        while (head != null && head.val == val) 
-            head = head.next;
+        head.next = removeElements(head.next, val);
         
-        while (node != null && node.next != null) {
-            if (node.next.val == val)
-                node.next = node.next.next;
-            else
-                node = node.next;
-        }
+        return (head.val == val) ? head.next : head;
         
-        return head;
+        // Iterative Solution
+//         ListNode node = head;
+        
+//         if (head == null)
+//             return head;
+        
+//         while (head != null && head.val == val) 
+//             head = head.next;
+        
+//         while (node != null && node.next != null) {
+//             if (node.next.val == val)
+//                 node.next = node.next.next;
+//             else
+//                 node = node.next;
+//         }
+        
+//         return head;
     }
 }
