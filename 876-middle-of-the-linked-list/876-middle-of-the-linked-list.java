@@ -10,34 +10,31 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        ListNode temp = head;
-        ListNode temp1 = head;
-        // ListNode even = head;
-        // ListNode odd = head;
-        int count = 0;
+        // Fast and Slow Pointer Solution
+        ListNode slow = head;
+        ListNode fast = head;
         
-        while (temp != null) {
-            temp = temp.next;
-            count++;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
         
-        for (int i=1; i<=count/2; i++) {
-            temp1 = temp1.next;
-        }
+        return slow;
         
-        return temp1;
+        // Brute Force Solution
+//         ListNode temp = head;
+//         ListNode temp1 = head;
+//         int count = 0;
         
-        // if (count % 2 == 0) {
-        //     for (int i=1; i<=count/2; i++) {
-        //         even = even.next;
-        //     }
-        //     return even;
-        // }
-        // else {
-        //     for (int i=1; i<=count/2; i++) {
-        //         odd = odd.next;
-        //     }
-        //     return odd;
-        // }  
+//         while (temp != null) {
+//             temp = temp.next;
+//             count++;
+//         }
+        
+//         for (int i=1; i<=count/2; i++) {
+//             temp1 = temp1.next;
+//         }
+        
+//         return temp1;
     }
 }
