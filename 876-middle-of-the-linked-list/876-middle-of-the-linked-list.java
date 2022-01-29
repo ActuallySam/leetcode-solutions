@@ -12,8 +12,8 @@ class Solution {
     public ListNode middleNode(ListNode head) {
         ListNode temp = head;
         ListNode temp1 = head;
-        ListNode even = head;
-        ListNode odd = head;
+        // ListNode even = head;
+        // ListNode odd = head;
         int count = 0;
         
         while (temp != null) {
