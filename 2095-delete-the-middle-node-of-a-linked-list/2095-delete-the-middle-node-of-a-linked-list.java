@@ -10,21 +10,33 @@
  */
 class Solution {
     public ListNode deleteMiddle(ListNode head) {
-        // Two Pointer Solution
-        ListNode fast = head;
-        ListNode slow = head;
-        ListNode prev = head;
-        if (head.next == null)
+        // Two Pointer w/o Prev Node
+        if (head.next == null || head == null)
             return null;
-        
+        ListNode slow = head;
+        ListNode fast = head.next.next;
         while (fast != null && fast.next != null) {
-            prev = slow;
-            fast = fast.next.next;
             slow = slow.next;
+            fast = fast.next.next;
         }
-        prev.next = slow.next;
-        
+        slow.next = slow.next.next;
         return head;
+        
+        // Two Pointer Solution
+//         ListNode fast = head;
+//         ListNode slow = head;
+//         ListNode prev = head;
+//         if (head.next == null)
+//             return null;
+        
+//         while (fast != null && fast.next != null) {
+//             prev = slow;
+//             fast = fast.next.next;
+//             slow = slow.next;
+//         }
+//         prev.next = slow.next;
+        
+//         return head;
         
         // Brute Force Solution
 //         ListNode temp = head;
